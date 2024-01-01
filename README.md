@@ -45,23 +45,7 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/ndarray-base-assert-is-real-floating-point-data-type
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
@@ -69,8 +53,32 @@ The [branches.md][branches-url] file summarizes the available branches and displ
 
 <!-- eslint-disable id-length -->
 
+To use in Observable,
+
 ```javascript
-var isRealFloatingPointDataType = require( '@stdlib/ndarray-base-assert-is-real-floating-point-data-type' );
+isRealFloatingPointDataType = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-assert-is-real-floating-point-data-type@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var isRealFloatingPointDataType = require( 'path/to/vendor/umd/ndarray-base-assert-is-real-floating-point-data-type/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-assert-is-real-floating-point-data-type@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.isRealFloatingPointDataType;
+})();
+</script>
 ```
 
 #### isRealFloatingPointDataType( value )
@@ -109,8 +117,13 @@ bool = isRealFloatingPointDataType( 'uint32' );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var isRealFloatingPointDataType = require( '@stdlib/ndarray-base-assert-is-real-floating-point-data-type' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-assert-is-real-floating-point-data-type@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 var bool = isRealFloatingPointDataType( 'binary' );
 // returns false
@@ -150,6 +163,11 @@ bool = isRealFloatingPointDataType( '' );
 
 bool = isRealFloatingPointDataType( 'foo' );
 // returns false
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
